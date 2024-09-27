@@ -1,0 +1,121 @@
+columns:
+- category: Chosen Data
+  column: inspectorName
+  dataframe: properties
+  description: The risks's inspector's name.
+  fill: ''
+  hide: false
+  prefilter: []
+  type: str
+- category: Chosen Data
+  column: riskNextInspectionDate
+  dataframe: properties
+  description: The risk's next inspection date.
+  fill: ''
+  format: '{:%Y-%m-%d}'
+  hide: false
+  prefilter: []
+  type: date
+- category: Chosen Data
+  column: riskInspectionRequestedDate
+  dataframe: properties
+  description: The risk's requested inspection date.
+  fill: ''
+  format: '{:%Y-%m-%d}'
+  hide: false
+  prefilter: []
+  type: date
+- category: Chosen Data
+  column: policyTypeName
+  dataframe: policy_types
+  description: The name of the policy type.
+  fill: ''
+  hide: false
+  prefilter: []
+  type: str
+- category: Chosen Data
+  column: policyNumber
+  dataframe: policies
+  description: The policy number.
+  fill: ''
+  hide: false
+  prefilter: []
+  type: str
+- category: Chosen Data
+  column: primaryPolicyholderName
+  dataframe: primary_policyholders
+  description: The primary policyholder's name.
+  fill: ''
+  hide: false
+  prefilter: []
+  type: str
+- category: Chosen Data
+  column: inceptionDate
+  dataframe: revisions
+  description: The date that the policy was first issued.
+  fill: ''
+  format: '{:%Y-%m-%d}'
+  hide: false
+  prefilter: []
+  type: date
+- category: Chosen Data
+  column: riskAddressLine1
+  dataframe: properties
+  description: The first line risk address.
+  fill: ''
+  hide: false
+  prefilter: []
+  type: str
+- category: Chosen Data
+  column: riskAddressLine2
+  dataframe: properties
+  description: The second line risk address.
+  fill: ''
+  hide: false
+  prefilter: []
+  type: str
+- category: Chosen Data
+  column: riskCity
+  dataframe: properties
+  description: The risk's city.
+  fill: ''
+  hide: false
+  prefilter: []
+  type: str
+- category: Chosen Data
+  column: riskState
+  dataframe: properties
+  description: The risk's state.
+  fill: ''
+  hide: false
+  prefilter: []
+  type: str
+- category: Chosen Data
+  column: riskCounty
+  dataframe: properties
+  description: The risk's county.
+  fill: ''
+  hide: false
+  prefilter: []
+  type: str
+- category: Chosen Data
+  column: renewalStatus
+  dataframe: revisions
+  description: Renew vs. Non-Renewal
+  fill: ''
+  hide: false
+  prefilter: []
+  type: str
+rules:
+- action: '>'
+  column: riskNextInspectionDate
+  type: filter
+  validValues: true
+  values:
+  - reportStartDate
+- action: <=
+  column: riskNextInspectionDate
+  type: filter
+  validValues: true
+  values:
+  - reportEndDate
